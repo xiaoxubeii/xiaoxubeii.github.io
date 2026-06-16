@@ -1,12 +1,20 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="630" fill="#f6f2ea"/>
-  <rect x="86" y="74" width="1028" height="482" rx="28" fill="#19211f"/>
-  <path d="M133 452C264 321 351 335 457 386C563 437 665 440 769 331C873 222 983 197 1064 253V556H133V452Z" fill="#7ba7a0"/>
-  <path d="M133 480C275 408 387 420 491 462C607 509 742 501 866 394C944 326 1019 316 1064 338V556H133V480Z" fill="#e8876f"/>
-  <rect x="166" y="138" width="430" height="46" rx="23" fill="#f6f2ea"/>
-  <rect x="166" y="217" width="620" height="28" rx="14" fill="#f6f2ea" fill-opacity=".72"/>
-  <rect x="166" y="268" width="492" height="28" rx="14" fill="#f6f2ea" fill-opacity=".48"/>
-  <rect x="166" y="352" width="184" height="54" rx="8" fill="#f6f2ea"/>
-  <rect x="380" y="352" width="184" height="54" rx="8" fill="#f6f2ea" fill-opacity=".18"/>
-  <text x="166" y="177" fill="#19211f" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">xiaoxubeii</text>
+  <rect width="1200" height="630" fill="#05070b"/>
+  <path d="M0 80H1200M0 160H1200M0 240H1200M0 320H1200M0 400H1200M0 480H1200M0 560H1200M80 0V630M160 0V630M240 0V630M320 0V630M400 0V630M480 0V630M560 0V630M640 0V630M720 0V630M800 0V630M880 0V630M960 0V630M1040 0V630M1120 0V630" stroke="#6EE7E0" stroke-opacity=".08"/>
+  <rect x="80" y="72" width="1040" height="486" rx="28" fill="#0c111a" stroke="#6EE7E0" stroke-opacity=".28"/>
+  <rect x="112" y="106" width="468" height="390" rx="18" fill="#111827" stroke="#94A3B8" stroke-opacity=".24"/>
+  <rect x="620" y="106" width="388" height="190" rx="18" fill="#111827" stroke="#94A3B8" stroke-opacity=".24"/>
+  <rect x="620" y="326" width="388" height="170" rx="18" fill="#111827" stroke="#94A3B8" stroke-opacity=".24"/>
+  <text x="144" y="184" fill="#6EE7E0" font-family="monospace" font-size="22" font-weight="700">AI AGENT SYSTEMS</text>
+  <text x="144" y="270" fill="#F7F8FB" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="800">xiaoxubeii.agent</text>
+  <text x="144" y="326" fill="#9AA7B8" font-family="Inter, Arial, sans-serif" font-size="26">Building agents that think with tools.</text>
+  <rect x="144" y="382" width="318" height="54" rx="10" fill="#6EE7E0"/>
+  <text x="168" y="417" fill="#041014" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800">View agent work</text>
+  <circle cx="696" cy="190" r="34" fill="#6EE7E0" fill-opacity=".22" stroke="#6EE7E0"/>
+  <circle cx="844" cy="164" r="34" fill="#FF7A66" fill-opacity=".2" stroke="#FF7A66"/>
+  <circle cx="888" cy="244" r="34" fill="#9DFC7D" fill-opacity=".18" stroke="#9DFC7D"/>
+  <path d="M730 190L810 168M864 196L878 214M724 212L858 232" stroke="#6EE7E0" stroke-opacity=".7"/>
+  <rect x="652" y="374" width="300" height="18" rx="9" fill="#6EE7E0" fill-opacity=".8"/>
+  <rect x="652" y="414" width="240" height="18" rx="9" fill="#9DFC7D" fill-opacity=".75"/>
+  <rect x="652" y="454" width="276" height="18" rx="9" fill="#FF7A66" fill-opacity=".72"/>
 </svg>

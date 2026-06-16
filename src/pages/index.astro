@@ -1,27 +1,44 @@
 ---
 import '../styles/global.css';
 
-const projects = [
+const missions = [
+  { name: 'research synthesis', state: 'running', detail: 'papers -> claims -> notes' },
+  { name: 'agent eval loop', state: 'queued', detail: 'tasks -> traces -> scorecards' },
+  { name: 'tool workflow lab', state: 'ready', detail: 'prompts -> tools -> artifacts' },
+];
+
+const capabilities = [
   {
-    title: 'Research Notes',
-    eyebrow: 'Writing',
-    description: 'A place for ideas, reading notes, and small experiments that deserve a clear public home.',
+    title: 'Agent Systems',
+    description: 'Designing workflows where language models plan, call tools, inspect results, and recover from messy states.',
+    metric: 'planner / executor / reviewer',
   },
   {
-    title: 'Building Log',
-    eyebrow: 'Projects',
-    description: 'Short records of tools, prototypes, and lessons learned while making things on the web.',
+    title: 'Research Automation',
+    description: 'Turning papers, docs, and notes into structured context that can be searched, tested, and reused.',
+    metric: 'search / ingest / synthesize',
   },
   {
-    title: 'Selected Work',
-    eyebrow: 'Portfolio',
-    description: 'A focused shelf for projects, papers, demos, or case studies you want visitors to remember.',
+    title: 'Evaluation Loops',
+    description: 'Building feedback paths for prompts, agents, and generated artifacts so improvements are visible.',
+    metric: 'trace / grade / iterate',
   },
 ];
 
-const links = [
-  { label: 'GitHub', href: 'https://github.com/xiaoxubeii' },
-  { label: 'Email', href: 'mailto:hello@example.com' },
+const logs = [
+  { time: '09:42', event: 'indexed agent-runtime notes', status: 'ok' },
+  { time: '10:18', event: 'validated tool-call contract', status: 'ok' },
+  { time: '11:03', event: 'queued evaluation harness', status: 'wait' },
+  { time: '13:27', event: 'published research digest', status: 'ship' },
+];
+
+const projects = [
+  'AI agent workflows',
+  'Context engineering',
+  'Research copilots',
+  'Human-in-the-loop systems',
+  'Eval-driven development',
+  'Knowledge graphs',
 ];
 ---
 
@@ -32,89 +49,194 @@ const links = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="The personal website of xiaoxubeii, a clean home for projects, notes, and research."
+      content="xiaoxubeii builds AI agent workflows, research automation systems, and tool-using software."
     />
-    <meta property="og:title" content="xiaoxubeii" />
+    <meta property="og:title" content="xiaoxubeii.agent" />
     <meta
       property="og:description"
-      content="Projects, notes, and research by xiaoxubeii."
+      content="An agent-oriented personal site for projects, notes, workflows, and experiments."
     />
     <meta property="og:image" content="/site-preview.svg" />
-    <title>xiaoxubeii</title>
+    <title>xiaoxubeii.agent</title>
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="/" aria-label="xiaoxubeii home">xiaoxubeii</a>
-      <nav aria-label="Primary navigation">
-        <a href="#work">Work</a>
-        <a href="#notes">Notes</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="xiaoxubeii home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>xiaoxubeii.agent</span>
+        </a>
+        <nav aria-label="Primary navigation">
+          <a href="#stack">Stack</a>
+          <a href="#logs">Logs</a>
+          <a href="#work">Work</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
 
-    <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero__content">
-          <p class="kicker">Personal site</p>
-          <h1 id="hero-title">xiaoxubeii</h1>
-          <p class="hero__lede">
-            A quiet home for projects, research notes, and the small systems that turn curiosity into work.
-          </p>
-          <div class="hero__actions" aria-label="Primary links">
-            <a class="button button--primary" href="#work">View work</a>
-            <a class="button button--ghost" href="https://github.com/xiaoxubeii">GitHub</a>
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-panel hero-copy">
+            <p class="eyebrow">AI AGENT / RESEARCH AUTOMATION / TOOL-USING SYSTEMS</p>
+            <h1 id="hero-title">Building agents that think with tools.</h1>
+            <p class="hero-lede">
+              I explore agentic workflows, context engineering, evaluation loops, and the interfaces that make human-AI collaboration feel precise instead of mysterious.
+            </p>
+
+            <div class="command-line" aria-label="Agent command prompt">
+              <span class="prompt">$</span>
+              <span>boot agent --profile=research</span>
+              <span class="cursor" aria-hidden="true"></span>
+            </div>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#work">View work</a>
+              <a class="button" href="https://github.com/xiaoxubeii">GitHub</a>
+            </div>
           </div>
-        </div>
-      </section>
 
-      <section class="intro" aria-label="Introduction">
-        <p>
-          This site is intentionally simple: fast to load, easy to edit, and ready to grow from a homepage into a portfolio, blog, or research archive.
-        </p>
-      </section>
+          <aside class="hero-panel cockpit" aria-label="Agent cockpit preview">
+            <div class="window-bar">
+              <span></span>
+              <span></span>
+              <span></span>
+              <strong>agent runtime</strong>
+            </div>
 
-      <section class="section" id="work" aria-labelledby="work-title">
-        <div class="section__header">
-          <p class="kicker">Work</p>
-          <h2 id="work-title">A flexible starting point</h2>
-        </div>
-        <div class="project-grid">
-          {projects.map((project) => (
-            <article class="project-card">
-              <p>{project.eyebrow}</p>
-              <h3>{project.title}</h3>
-              <span>{project.description}</span>
-            </article>
-          ))}
-        </div>
-      </section>
+            <div class="runtime-grid">
+              <section class="runtime-card mission-card" aria-labelledby="missions-title">
+                <div class="card-heading">
+                  <p class="label">Mission Queue</p>
+                  <span class="live-dot">live</span>
+                </div>
+                <h2 id="missions-title">Current runs</h2>
+                <div class="mission-list">
+                  {missions.map((mission) => (
+                    <article class="mission-item">
+                      <span class={`state state-${mission.state}`}></span>
+                      <div>
+                        <strong>{mission.name}</strong>
+                        <p>{mission.detail}</p>
+                      </div>
+                      <small>{mission.state}</small>
+                    </article>
+                  ))}
+                </div>
+              </section>
 
-      <section class="section section--split" id="notes" aria-labelledby="notes-title">
-        <div>
-          <p class="kicker">Notes</p>
-          <h2 id="notes-title">Built for gradual publishing</h2>
-        </div>
-        <p>
-          Add Markdown posts, project pages, paper notes, or a resume page whenever you are ready. Astro keeps the site static, portable, and GitHub Pages friendly.
-        </p>
-      </section>
+              <section class="runtime-card graph-card" aria-labelledby="memory-title">
+                <div class="card-heading">
+                  <p class="label">Memory Graph</p>
+                  <span>context map</span>
+                </div>
+                <h2 id="memory-title">Signals</h2>
+                <div class="memory-graph" aria-hidden="true">
+                  <span class="node node-a"></span>
+                  <span class="node node-b"></span>
+                  <span class="node node-c"></span>
+                  <span class="node node-d"></span>
+                  <span class="edge edge-a"></span>
+                  <span class="edge edge-b"></span>
+                  <span class="edge edge-c"></span>
+                </div>
+              </section>
 
-      <section class="section contact" id="contact" aria-labelledby="contact-title">
-        <div>
-          <p class="kicker">Contact</p>
-          <h2 id="contact-title">Find me online</h2>
-        </div>
-        <div class="link-row">
-          {links.map((link) => (
-            <a href={link.href}>{link.label}</a>
-          ))}
-        </div>
-      </section>
-    </main>
+              <section class="runtime-card trace-card" aria-labelledby="trace-title">
+                <div class="card-heading">
+                  <p class="label">Tool Trace</p>
+                  <span>verified</span>
+                </div>
+                <h2 id="trace-title">Calls</h2>
+                <div class="trace-lines">
+                  <p><b>search</b><span>agent benchmarks</span></p>
+                  <p><b>read</b><span>eval-notes.md</span></p>
+                  <p><b>run</b><span>npm test</span></p>
+                  <p><b>commit</b><span>artifact shipped</span></p>
+                </div>
+              </section>
+            </div>
+          </aside>
+        </section>
 
-    <footer>
-      <span>Built with Astro.</span>
-      <span>Deployed on GitHub Pages.</span>
-    </footer>
+        <section class="status-strip" aria-label="Site status">
+          <div>
+            <strong>36</strong>
+            <span>agent runs</span>
+          </div>
+          <div>
+            <strong>128</strong>
+            <span>notes indexed</span>
+          </div>
+          <div>
+            <strong>07</strong>
+            <span>experiments active</span>
+          </div>
+          <div>
+            <strong>1.0</strong>
+            <span>public interface</span>
+          </div>
+        </section>
+
+        <section class="section" id="stack" aria-labelledby="stack-title">
+          <div class="section-heading">
+            <p class="eyebrow">Agent Stack</p>
+            <h2 id="stack-title">Systems, not just prompts.</h2>
+          </div>
+          <div class="capability-grid">
+            {capabilities.map((item) => (
+              <article class="capability-card">
+                <p>{item.metric}</p>
+                <h3>{item.title}</h3>
+                <span>{item.description}</span>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="section log-section" id="logs" aria-labelledby="logs-title">
+          <div class="section-heading">
+            <p class="eyebrow">Run Logs</p>
+            <h2 id="logs-title">A visible trail of experiments.</h2>
+          </div>
+          <div class="log-console" role="list">
+            {logs.map((log) => (
+              <article class="log-row" role="listitem">
+                <time>{log.time}</time>
+                <span>{log.event}</span>
+                <strong class={`log-${log.status}`}>{log.status}</strong>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="section work-section" id="work" aria-labelledby="work-title">
+          <div class="section-heading">
+            <p class="eyebrow">Work</p>
+            <h2 id="work-title">Where the experiments collect.</h2>
+          </div>
+          <div class="tag-grid">
+            {projects.map((project) => (
+              <a href="https://github.com/xiaoxubeii">{project}</a>
+            ))}
+          </div>
+        </section>
+
+        <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2 id="contact-title">Open a channel.</h2>
+          </div>
+          <div class="contact-links">
+            <a href="https://github.com/xiaoxubeii">GitHub</a>
+            <a href="mailto:xiaoxubeii@gmail.com">Email</a>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <span>xiaoxubeii.agent</span>
+        <span>Built with Astro. Deployed on GitHub Pages.</span>
+      </footer>
+    </div>
   </body>
 </html>
