@@ -1,0 +1,120 @@
+---
+import '../styles/global.css';
+
+const projects = [
+  {
+    title: 'Research Notes',
+    eyebrow: 'Writing',
+    description: 'A place for ideas, reading notes, and small experiments that deserve a clear public home.',
+  },
+  {
+    title: 'Building Log',
+    eyebrow: 'Projects',
+    description: 'Short records of tools, prototypes, and lessons learned while making things on the web.',
+  },
+  {
+    title: 'Selected Work',
+    eyebrow: 'Portfolio',
+    description: 'A focused shelf for projects, papers, demos, or case studies you want visitors to remember.',
+  },
+];
+
+const links = [
+  { label: 'GitHub', href: 'https://github.com/xiaoxubeii' },
+  { label: 'Email', href: 'mailto:hello@example.com' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The personal website of xiaoxubeii, a clean home for projects, notes, and research."
+    />
+    <meta property="og:title" content="xiaoxubeii" />
+    <meta
+      property="og:description"
+      content="Projects, notes, and research by xiaoxubeii."
+    />
+    <meta property="og:image" content="/site-preview.svg" />
+    <title>xiaoxubeii</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="xiaoxubeii home">xiaoxubeii</a>
+      <nav aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#notes">Notes</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__content">
+          <p class="kicker">Personal site</p>
+          <h1 id="hero-title">xiaoxubeii</h1>
+          <p class="hero__lede">
+            A quiet home for projects, research notes, and the small systems that turn curiosity into work.
+          </p>
+          <div class="hero__actions" aria-label="Primary links">
+            <a class="button button--primary" href="#work">View work</a>
+            <a class="button button--ghost" href="https://github.com/xiaoxubeii">GitHub</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro" aria-label="Introduction">
+        <p>
+          This site is intentionally simple: fast to load, easy to edit, and ready to grow from a homepage into a portfolio, blog, or research archive.
+        </p>
+      </section>
+
+      <section class="section" id="work" aria-labelledby="work-title">
+        <div class="section__header">
+          <p class="kicker">Work</p>
+          <h2 id="work-title">A flexible starting point</h2>
+        </div>
+        <div class="project-grid">
+          {projects.map((project) => (
+            <article class="project-card">
+              <p>{project.eyebrow}</p>
+              <h3>{project.title}</h3>
+              <span>{project.description}</span>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section section--split" id="notes" aria-labelledby="notes-title">
+        <div>
+          <p class="kicker">Notes</p>
+          <h2 id="notes-title">Built for gradual publishing</h2>
+        </div>
+        <p>
+          Add Markdown posts, project pages, paper notes, or a resume page whenever you are ready. Astro keeps the site static, portable, and GitHub Pages friendly.
+        </p>
+      </section>
+
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <div>
+          <p class="kicker">Contact</p>
+          <h2 id="contact-title">Find me online</h2>
+        </div>
+        <div class="link-row">
+          {links.map((link) => (
+            <a href={link.href}>{link.label}</a>
+          ))}
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Built with Astro.</span>
+      <span>Deployed on GitHub Pages.</span>
+    </footer>
+  </body>
+</html>
