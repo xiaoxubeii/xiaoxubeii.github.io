@@ -1,0 +1,23 @@
+---
+import TerminalPage from '../layouts/TerminalPage.astro';
+
+const now = [
+  'Seeking the next startup opportunity',
+  'Studying AI agent workflows and developer tools',
+  'Building small prototypes around research automation',
+  'Collecting sharp problems worth committing to',
+];
+---
+
+<TerminalPage
+  title="now"
+  command="beixu@home:~$ status --now"
+  description="Current state, active interests, and what beixu is exploring next."
+>
+  <section class="terminal-output">
+    <p class="section-title">Current state</p>
+    <ul class="cli-list">
+      {now.map((item) => <li>{item}</li>)}
+    </ul>
+  </section>
+</TerminalPage>

@@ -1,0 +1,43 @@
+---
+import TerminalPage from '../../layouts/TerminalPage.astro';
+
+const systems = [
+  ['Tencent Cloud', 'Public cloud container platform architecture, AI infrastructure, resource scheduling, and GPU virtualization systems.'],
+  ['TalkingData', 'Cloud-native big data platform, private cloud cluster management, task scheduling, microservices, and multi-cloud architecture.'],
+  ['Hewlett-Packard', 'Private cloud platform architecture, core modules, resource management, and infrastructure development.'],
+  ['GPU pod tooling', 'vLLM-oriented deployment and GPU pod management experiments for agentic workloads.'],
+];
+---
+
+<TerminalPage
+  title="ai infrastructure"
+  command="beixu@home:~$ cat /work/ai-infrastructure.md"
+  description="Cloud-native AI infrastructure, resource scheduling, GPU management, and platform architecture."
+>
+  <section class="terminal-output work-detail">
+    <p class="section-title">What this is</p>
+    <p>
+      Infrastructure work behind applied AI: cloud platforms, container systems,
+      schedulers, GPU management, and deployment surfaces that let models and
+      agentic workloads run reliably.
+    </p>
+  </section>
+
+  <section class="detail-grid" aria-label="AI infrastructure cases">
+    {systems.map(([name, detail]) => (
+      <article>
+        <p class="file-command">{name}</p>
+        <p>{detail}</p>
+      </article>
+    ))}
+  </section>
+
+  <section class="terminal-output">
+    <p class="section-title">Core thread</p>
+    <p>
+      This is the base layer under the rest of the work: before agents,
+      robotics, or clinical AI can be useful, they need reliable compute,
+      orchestration, observability, and deployment paths.
+    </p>
+  </section>
+</TerminalPage>

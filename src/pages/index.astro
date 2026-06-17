@@ -1,44 +1,9 @@
 ---
 import '../styles/global.css';
 
-const missions = [
-  { name: 'research synthesis', state: 'running', detail: 'papers -> claims -> notes' },
-  { name: 'agent eval loop', state: 'queued', detail: 'tasks -> traces -> scorecards' },
-  { name: 'tool workflow lab', state: 'ready', detail: 'prompts -> tools -> artifacts' },
-];
-
-const capabilities = [
-  {
-    title: 'Agent Systems',
-    description: 'Designing workflows where language models plan, call tools, inspect results, and recover from messy states.',
-    metric: 'planner / executor / reviewer',
-  },
-  {
-    title: 'Research Automation',
-    description: 'Turning papers, docs, and notes into structured context that can be searched, tested, and reused.',
-    metric: 'search / ingest / synthesize',
-  },
-  {
-    title: 'Evaluation Loops',
-    description: 'Building feedback paths for prompts, agents, and generated artifacts so improvements are visible.',
-    metric: 'trace / grade / iterate',
-  },
-];
-
-const logs = [
-  { time: '09:42', event: 'indexed agent-runtime notes', status: 'ok' },
-  { time: '10:18', event: 'validated tool-call contract', status: 'ok' },
-  { time: '11:03', event: 'queued evaluation harness', status: 'wait' },
-  { time: '13:27', event: 'published research digest', status: 'ship' },
-];
-
-const projects = [
-  'AI agent workflows',
-  'Context engineering',
-  'Research copilots',
-  'Human-in-the-loop systems',
-  'Eval-driven development',
-  'Knowledge graphs',
+const recent = [
+  'Built AI infrastructure, agent workflows, and cloud-native platforms at enterprise scale',
+  'Now shipping AI agents, embodied intelligence, clinical AI, and automated research systems into the real world',
 ];
 ---
 
@@ -49,194 +14,193 @@ const projects = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="xiaoxubeii builds AI agent workflows, research automation systems, and tool-using software."
+      content="beixu's command-line inspired personal homepage for AI agents, research automation, and context engineering."
     />
-    <meta property="og:title" content="xiaoxubeii.agent" />
+    <meta property="og:title" content="beixu code" />
     <meta
       property="og:description"
-      content="An agent-oriented personal site for projects, notes, workflows, and experiments."
+      content="A Claude Code and Codex inspired personal homepage."
     />
     <meta property="og:image" content="/site-preview.svg" />
-    <title>xiaoxubeii.agent</title>
+    <title>beixu code</title>
   </head>
   <body>
-    <div class="shell">
-      <header class="topbar">
-        <a class="brand" href="/" aria-label="xiaoxubeii home">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span>xiaoxubeii.agent</span>
-        </a>
-        <nav aria-label="Primary navigation">
-          <a href="#stack">Stack</a>
-          <a href="#logs">Logs</a>
-          <a href="#work">Work</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </header>
-
+    <div class="terminal-page">
       <main>
-        <section class="hero" aria-labelledby="hero-title">
-          <div class="hero-panel hero-copy">
-            <p class="eyebrow">AI AGENT / RESEARCH AUTOMATION / TOOL-USING SYSTEMS</p>
-            <h1 id="hero-title">Building agents that think with tools.</h1>
-            <p class="hero-lede">
-              I explore agentic workflows, context engineering, evaluation loops, and the interfaces that make human-AI collaboration feel precise instead of mysterious.
+        <section class="boot-frame" aria-labelledby="home-title">
+          <div class="frame-title">
+            <span>beixu code</span>
+            <span class="muted">v0.2.0</span>
+          </div>
+
+          <div class="boot-grid">
+            <section class="welcome-pane" aria-labelledby="home-title">
+              <div>
+                <p class="welcome">Welcome back!</p>
+                <img
+                  class="pixel-bust"
+                  src="/avatar-pixel-bust.png"
+                  alt="Pixel-style half-body avatar of beixu"
+                />
+                <h1 id="home-title">beixu</h1>
+                <p class="muted">AI Systems · Agents · Applied Intelligence</p>
+                <p class="path">/Users/beixu</p>
+              </div>
+            </section>
+
+            <section class="activity-pane" aria-label="Active mission and profile">
+              <div class="terminal-block">
+                <p class="section-title">Active mission</p>
+                <p class="intro-copy">
+                  AI architect and product builder turning research-grade
+                  intelligence into deployable systems.
+                </p>
+              </div>
+
+              <div class="rule"></div>
+
+              <div class="terminal-block">
+                <p class="section-title">What's loaded</p>
+                {recent.map((item) => (
+                  <p class="truncate-line">{item}</p>
+                ))}
+                <p class="muted command-links">
+                  <a href="/about">/about</a> for who I am,
+                  <a href="/work">/work</a> for things I've built,
+                  <a href="/notes">/notes</a> for writing,
+                  <a href="/now">/now</a> for current focus,
+                  <a href="/contact">/contact</a> to reach me
+                </p>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section class="session-lines" aria-label="Session status">
+          <p>
+            <span class="green">*</span> Running loop: research -&gt; systems -&gt;
+            products -&gt; real-world deployment
+          </p>
+          <p class="warning">
+            Status: available for startup teams building serious AI infrastructure
+            and applied intelligence
+          </p>
+        </section>
+
+        <section class="command-console" aria-label="Interactive command output">
+          <div id="command-output" class="command-output" aria-live="polite">
+            <p>
+              <span class="green">*</span> Try: help, work, startup-fit,
+              why-ai, contact
             </p>
-
-            <div class="command-line" aria-label="Agent command prompt">
-              <span class="prompt">$</span>
-              <span>boot agent --profile=research</span>
-              <span class="cursor" aria-hidden="true"></span>
-            </div>
-
-            <div class="hero-actions">
-              <a class="button button-primary" href="#work">View work</a>
-              <a class="button" href="https://github.com/xiaoxubeii">GitHub</a>
-            </div>
-          </div>
-
-          <aside class="hero-panel cockpit" aria-label="Agent cockpit preview">
-            <div class="window-bar">
-              <span></span>
-              <span></span>
-              <span></span>
-              <strong>agent runtime</strong>
-            </div>
-
-            <div class="runtime-grid">
-              <section class="runtime-card mission-card" aria-labelledby="missions-title">
-                <div class="card-heading">
-                  <p class="label">Mission Queue</p>
-                  <span class="live-dot">live</span>
-                </div>
-                <h2 id="missions-title">Current runs</h2>
-                <div class="mission-list">
-                  {missions.map((mission) => (
-                    <article class="mission-item">
-                      <span class={`state state-${mission.state}`}></span>
-                      <div>
-                        <strong>{mission.name}</strong>
-                        <p>{mission.detail}</p>
-                      </div>
-                      <small>{mission.state}</small>
-                    </article>
-                  ))}
-                </div>
-              </section>
-
-              <section class="runtime-card graph-card" aria-labelledby="memory-title">
-                <div class="card-heading">
-                  <p class="label">Memory Graph</p>
-                  <span>context map</span>
-                </div>
-                <h2 id="memory-title">Signals</h2>
-                <div class="memory-graph" aria-hidden="true">
-                  <span class="node node-a"></span>
-                  <span class="node node-b"></span>
-                  <span class="node node-c"></span>
-                  <span class="node node-d"></span>
-                  <span class="edge edge-a"></span>
-                  <span class="edge edge-b"></span>
-                  <span class="edge edge-c"></span>
-                </div>
-              </section>
-
-              <section class="runtime-card trace-card" aria-labelledby="trace-title">
-                <div class="card-heading">
-                  <p class="label">Tool Trace</p>
-                  <span>verified</span>
-                </div>
-                <h2 id="trace-title">Calls</h2>
-                <div class="trace-lines">
-                  <p><b>search</b><span>agent benchmarks</span></p>
-                  <p><b>read</b><span>eval-notes.md</span></p>
-                  <p><b>run</b><span>npm test</span></p>
-                  <p><b>commit</b><span>artifact shipped</span></p>
-                </div>
-              </section>
-            </div>
-          </aside>
-        </section>
-
-        <section class="status-strip" aria-label="Site status">
-          <div>
-            <strong>36</strong>
-            <span>agent runs</span>
-          </div>
-          <div>
-            <strong>128</strong>
-            <span>notes indexed</span>
-          </div>
-          <div>
-            <strong>07</strong>
-            <span>experiments active</span>
-          </div>
-          <div>
-            <strong>1.0</strong>
-            <span>public interface</span>
           </div>
         </section>
 
-        <section class="section" id="stack" aria-labelledby="stack-title">
-          <div class="section-heading">
-            <p class="eyebrow">Agent Stack</p>
-            <h2 id="stack-title">Systems, not just prompts.</h2>
-          </div>
-          <div class="capability-grid">
-            {capabilities.map((item) => (
-              <article class="capability-card">
-                <p>{item.metric}</p>
-                <h3>{item.title}</h3>
-                <span>{item.description}</span>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section class="section log-section" id="logs" aria-labelledby="logs-title">
-          <div class="section-heading">
-            <p class="eyebrow">Run Logs</p>
-            <h2 id="logs-title">A visible trail of experiments.</h2>
-          </div>
-          <div class="log-console" role="list">
-            {logs.map((log) => (
-              <article class="log-row" role="listitem">
-                <time>{log.time}</time>
-                <span>{log.event}</span>
-                <strong class={`log-${log.status}`}>{log.status}</strong>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section class="section work-section" id="work" aria-labelledby="work-title">
-          <div class="section-heading">
-            <p class="eyebrow">Work</p>
-            <h2 id="work-title">Where the experiments collect.</h2>
-          </div>
-          <div class="tag-grid">
-            {projects.map((project) => (
-              <a href="https://github.com/xiaoxubeii">{project}</a>
-            ))}
-          </div>
-        </section>
-
-        <section class="section contact-section" id="contact" aria-labelledby="contact-title">
-          <div>
-            <p class="eyebrow">Contact</p>
-            <h2 id="contact-title">Open a channel.</h2>
-          </div>
-          <div class="contact-links">
-            <a href="https://github.com/xiaoxubeii">GitHub</a>
-            <a href="mailto:xiaoxubeii@gmail.com">Email</a>
-          </div>
+        <section class="input-strip interactive" aria-label="Command prompt">
+          <form id="command-form" class="command-form" autocomplete="off">
+            <label class="chevron" for="command-input">&gt;</label>
+            <input
+              id="command-input"
+              name="command"
+              type="text"
+              inputmode="text"
+              spellcheck="false"
+              aria-label="Type a command"
+            />
+          </form>
         </section>
       </main>
-
-      <footer>
-        <span>xiaoxubeii.agent</span>
-        <span>Built with Astro. Deployed on GitHub Pages.</span>
-      </footer>
     </div>
+
+    <script>
+      const form = document.querySelector('#command-form');
+      const input = document.querySelector('#command-input');
+      const output = document.querySelector('#command-output');
+      const measure = document.createElement('canvas').getContext('2d');
+
+      const responses = {
+        help: [
+          'commands: about, work, why-ai, startup-fit, contact, clear',
+          'paths: /about /work /notes /now /contact',
+        ],
+        about: [
+          'AI architect and product builder turning research-grade intelligence into deployable systems.',
+          'focus: cloud infra, agents, embodied intelligence, clinical AI.',
+        ],
+        work: [
+          'work map: agentic systems, embodied intelligence, clinical AI + CPET, AI infrastructure.',
+          'open: /work',
+        ],
+        'why-ai': [
+          'because useful AI needs systems: compute, data, agents, interfaces, review loops, and deployment.',
+        ],
+        'startup-fit': [
+          'best fit: serious applied AI teams building infrastructure, agent workflows, robotics intelligence, or clinical decision support.',
+        ],
+        contact: ['github.com/xiaoxubeii', 'xiaoxubeii@gmail.com'],
+      };
+
+      const pathCommands = new Set(['about', 'work', 'contact']);
+
+      const appendLine = (text, className = '') => {
+        const line = document.createElement('p');
+        if (className) line.className = className;
+        line.textContent = text;
+        output?.append(line);
+      };
+
+      const updateCursor = () => {
+        if (!form || !input || !measure) return;
+        const style = window.getComputedStyle(input);
+        measure.font = style.font;
+        const position = input.selectionStart ?? input.value.length;
+        const text = input.value.slice(0, position);
+        const width = measure.measureText(text).width;
+        form.style.setProperty('--cursor-offset', `${Math.ceil(width)}px`);
+      };
+
+      input?.addEventListener('input', updateCursor);
+      input?.addEventListener('keyup', updateCursor);
+      input?.addEventListener('click', updateCursor);
+      input?.addEventListener('focus', updateCursor);
+      window.addEventListener('resize', updateCursor);
+      updateCursor();
+
+      form?.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const command = input.value.trim().toLowerCase();
+        if (!command) return;
+
+        appendLine(`> ${command}`, 'command-echo');
+        input.value = '';
+        updateCursor();
+
+        if (command === 'clear') {
+          output.innerHTML = '';
+          appendLine('* console cleared', 'green');
+          return;
+        }
+
+        const normalized = command.replace(/^\//, '');
+        const reply = responses[normalized];
+
+        if (!reply) {
+          appendLine(`unknown command: ${command}`);
+          appendLine('try: help');
+          return;
+        }
+
+        reply.forEach((line) => appendLine(line));
+
+        if (pathCommands.has(normalized)) {
+          const link = document.createElement('a');
+          link.href = `/${normalized}`;
+          link.textContent = `open /${normalized}`;
+          const row = document.createElement('p');
+          row.append(link);
+          output?.append(row);
+        }
+      });
+    </script>
   </body>
 </html>

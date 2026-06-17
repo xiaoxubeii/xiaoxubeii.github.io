@@ -1,0 +1,44 @@
+---
+import TerminalPage from '../../layouts/TerminalPage.astro';
+
+const systems = [
+  ['CPET-World', 'Research-use foundation model and adaptive digital twin workbench for cardiopulmonary exercise testing.'],
+  ['CPET Co-Pilot', 'Real-time CPET monitoring and prediction system with safety-aware review surfaces.'],
+  ['VOX CPET', 'VO2 peak prediction and real-time AT classification workflows for CPET model development.'],
+  ['Clinical agents', 'Report analysis, trend summaries, risk support, exercise prescription assistance, and clinical review loops.'],
+];
+---
+
+<TerminalPage
+  title="clinical ai cpet"
+  command="beixu@home:~$ cat /work/clinical-ai-cpet.md"
+  description="CPET-World, CPET Co-Pilot, VOX CPET, and clinical agent systems for cardiopulmonary assessment."
+>
+  <section class="terminal-output work-detail">
+    <p class="section-title">What this is</p>
+    <p>
+      Clinical AI work focused on CPET data, physiological signals, review
+      workbenches, and decision-support systems for cardiopulmonary assessment.
+      The goal is not autonomous diagnosis; it is safer reviewer-facing intelligence.
+    </p>
+  </section>
+
+  <section class="detail-grid" aria-label="Clinical AI cases">
+    {systems.map(([name, detail]) => (
+      <article>
+        <p class="file-command">{name}</p>
+        <p>{detail}</p>
+      </article>
+    ))}
+  </section>
+
+  <section class="terminal-output">
+    <p class="section-title">System ingredients</p>
+    <ul class="cli-list">
+      <li>multi-center processed CPET datasets and deterministic splits</li>
+      <li>masked reconstruction, endpoint heads, residual scoring, and uncertainty</li>
+      <li>browser workbenches that make model behavior visible to reviewers</li>
+      <li>clinical safety boundaries around risk support and decision assistance</li>
+    </ul>
+  </section>
+</TerminalPage>

@@ -1,0 +1,44 @@
+---
+import TerminalPage from '../../layouts/TerminalPage.astro';
+
+const systems = [
+  ['EviAgent', 'Evidence-based decision agent that turns a question into claims, cited evidence, an evidence graph, a decision, and verification steps.'],
+  ['Mono / mono-agent', 'Runtime experiments for controllable tool use, task execution, context handling, and human-in-the-loop operation.'],
+  ['ClinMono Agent', 'Clinical agent platform with LLM routes, screening workflows, Agent Lab surfaces, and research MCP integrations.'],
+  ['Agentic Ordering Service', 'Production-style multi-agent pipeline with intent extraction, planning, policy validation, and tool execution.'],
+];
+---
+
+<TerminalPage
+  title="agentic systems"
+  command="beixu@home:~$ cat /work/agentic-systems.md"
+  description="Evidence-grounded agents, mono-agent runtimes, clinical agents, and human-in-the-loop orchestration."
+>
+  <section class="terminal-output work-detail">
+    <p class="section-title">What this is</p>
+    <p>
+      A line of work around agents that do more than chat: they decompose tasks,
+      call tools, collect evidence, expose intermediate state, and leave a trail a
+      human can review.
+    </p>
+  </section>
+
+  <section class="detail-grid" aria-label="Agentic systems cases">
+    {systems.map(([name, detail]) => (
+      <article>
+        <p class="file-command">{name}</p>
+        <p>{detail}</p>
+      </article>
+    ))}
+  </section>
+
+  <section class="terminal-output">
+    <p class="section-title">Design pattern</p>
+    <ul class="cli-list">
+      <li>claims and tasks are separated from evidence collection</li>
+      <li>tool execution is explicit, inspectable, and policy-gated where needed</li>
+      <li>clinical and high-stakes flows keep human review in the loop</li>
+      <li>outputs include verification steps instead of pretending to be final truth</li>
+    </ul>
+  </section>
+</TerminalPage>

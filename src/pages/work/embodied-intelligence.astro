@@ -1,0 +1,43 @@
+---
+import TerminalPage from '../../layouts/TerminalPage.astro';
+
+const systems = [
+  ['Product direction', 'Defined quadruped robot product scenarios, roadmap priorities, and customer-facing validation paths.'],
+  ['Inspection workflows', 'Mapped robot capabilities to power and new-energy station inspection tasks, including perception, navigation, and task execution needs.'],
+  ['Simulation stack', 'Explored quadruped learning and control workflows through Isaac Lab, Unitree-style environments, and RL training stacks.'],
+  ['Deployment bridge', 'Connected prototype behavior, scene understanding, and commercialization feedback into a product/R&D loop.'],
+];
+---
+
+<TerminalPage
+  title="embodied intelligence"
+  command="beixu@home:~$ cat /work/embodied-intelligence.md"
+  description="Quadruped robot product/R&D work, inspection scenarios, simulation, and deployment prototypes."
+>
+  <section class="terminal-output work-detail">
+    <p class="section-title">What this is</p>
+    <p>
+      Robotics work at the boundary between product definition and embodied AI:
+      turning quadruped robots from impressive demos into systems that can inspect,
+      perceive, move, and execute tasks in industrial scenes.
+    </p>
+  </section>
+
+  <section class="detail-grid" aria-label="Embodied intelligence cases">
+    {systems.map(([name, detail]) => (
+      <article>
+        <p class="file-command">{name}</p>
+        <p>{detail}</p>
+      </article>
+    ))}
+  </section>
+
+  <section class="terminal-output">
+    <p class="section-title">Why it matters</p>
+    <p>
+      This work makes the AI story physical. It connects perception, control,
+      planning, scene constraints, customer validation, and hardware limits into
+      one system design problem.
+    </p>
+  </section>
+</TerminalPage>

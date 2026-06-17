@@ -1,0 +1,21 @@
+---
+import TerminalPage from '../layouts/TerminalPage.astro';
+
+const notes = [
+  ['startup-search.log', 'Looking for problems where AI agents create new workflows, not just faster autocomplete.'],
+  ['agent-interfaces.log', 'The best agent UI may feel less like chat and more like a transparent operating console.'],
+  ['context-systems.log', 'Useful memory is designed, pruned, and tested. It is not just more tokens.'],
+];
+---
+
+<TerminalPage
+  title="notes"
+  command="beixu@home:~$ tail -f /notes"
+  description="Short public notes on agents, product taste, and startup exploration."
+>
+  <section class="log-lines">
+    {notes.map(([file, line]) => (
+      <p><span class="green">NOTE</span><span>{file}</span><span>{line}</span></p>
+    ))}
+  </section>
+</TerminalPage>

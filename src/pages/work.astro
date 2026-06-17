@@ -1,0 +1,78 @@
+---
+import TerminalPage from '../layouts/TerminalPage.astro';
+
+const projects = [
+  {
+    name: '02 agentic-systems.md',
+    href: '/work/agentic-systems',
+    title: 'Agentic Systems & Evidence-Grounded Workflows',
+    description:
+      'Evidence-grounded agents, mono-agent runtimes, clinical agents, and human-in-the-loop orchestration.',
+    visual: 'agents',
+    tags: ['EviAgent', 'mono-agent', 'ClinMono Agent'],
+    cases: ['claims to evidence', 'tool execution', 'review loops'],
+  },
+  {
+    name: '03 embodied-intelligence.md',
+    href: '/work/embodied-intelligence',
+    title: 'Embodied Intelligence / Quadruped Robots',
+    description:
+      'Quadruped robot product/R&D work, inspection scenarios, simulation, and deployment prototypes.',
+    visual: 'robotics',
+    tags: ['quadruped robots', 'inspection', 'simulation'],
+    cases: ['Rongqi Technology', 'robot control', 'scenario deployment'],
+  },
+  {
+    name: '04 clinical-ai-cpet.md',
+    href: '/work/clinical-ai-cpet',
+    title: 'Clinical AI & CPET Intelligence',
+    description:
+      'CPET-World, CPET Co-Pilot, VOX CPET, and clinical agent systems for cardiopulmonary assessment.',
+    visual: 'clinical',
+    tags: ['CPET-World', 'VOX CPET', 'clinical agents'],
+    cases: ['physiological signals', 'risk support', 'review workbench'],
+  },
+  {
+    name: '01 ai-infrastructure.md',
+    href: '/work/ai-infrastructure',
+    title: 'AI Infrastructure at Enterprise Scale',
+    description:
+      'Cloud-native AI infrastructure, resource scheduling, GPU management, and platform architecture.',
+    visual: 'infra',
+    tags: ['cloud native', 'GPU scheduling', 'platform architecture'],
+    cases: ['Tencent Cloud', 'TalkingData', 'Hewlett-Packard'],
+  },
+];
+---
+
+<TerminalPage
+  title="work"
+  command="beixu@home:~$ open /work"
+  description="Selected systems across AI infrastructure, agents, robotics, and clinical intelligence."
+>
+  <section class="work-grid" aria-label="Selected work">
+    {projects.map((project) => (
+      <article class="work-card">
+        <div class={`work-visual ${project.visual}`} aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="work-card-body">
+          <p class="file-command">
+            -rw-r--r-- <a href={project.href}>{project.name}</a>
+          </p>
+          <h2><a href={project.href}>{project.title}</a></h2>
+          <p>{project.description}</p>
+          <div class="tag-row" aria-label={`${project.title} tags`}>
+            {project.tags.map((tag) => <span>{tag}</span>)}
+          </div>
+          <ul class="case-list">
+            {project.cases.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      </article>
+    ))}
+  </section>
+</TerminalPage>
